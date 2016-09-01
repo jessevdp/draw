@@ -12,7 +12,6 @@ body, html {
   padding: 0px;
 }
 
-
 .menu {
   /* Setting the icon's position to the top right corner */
   position: absolute;
@@ -63,10 +62,8 @@ body, html {
     }
   }
 
-
   /* =================
       stops the navbar from collapsing
-      (code from the internet, probably just 1% needed)
      =================*/
   @media (max-width: 768px) {
       .navbar {
