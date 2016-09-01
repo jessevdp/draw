@@ -1,4 +1,5 @@
 var app = {};
+app.updateInterval = 1500;
 var two;
 app.go = function() {
   this.myTextArea = document.getElementById('editor');
@@ -29,15 +30,19 @@ app.updateTwo = function() {
     newWidth = $('#output').width();
     newHeight = $('#output').height();
 
+    //if either the height or width changes the size is adjusted
     if (oldWidth === newWidth && oldHeight === newHeight ) {
       // nothing needs to happen
     } else {
+      //Setting size.
       two.renderer.setSize(newWidth, newHeight);
+      //Setting the variables (this needs to be done manually)
       two.height = newHeight;
       two.width = newWidth;
+      //Logging (for dev purposes)
       console.log('updated size');
     }
-  }, 3000);
+  }, app.updateInterval);
 
 }
 
