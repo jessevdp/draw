@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>draw</title>
+    <!--// setting the responsive vieuwport //-->
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!--// CSS files //-->
     <!--// fontawesome.io //-->
@@ -25,16 +27,30 @@
 
 
 
-    <div class="row height hidden-xs hidden-sm hidden-md">
+    <div class="row height ">
 
-      <div class="col-lg-4 height">
+      <div id="code" class="col-md-12 col-lg-4 height">
 
         <div class="code">
           <nav class="navbar navbar-inverse navbar-fixed-bottom">
-            <ul class="nav navbar-nav navbar-right">
-              <li id="trash"><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></li>
-              <li id="play" class="active"><a href="#"><i class="fa fa-play fa-2x"></i></a></li>
-            </ul>
+            <div class="container-fluid">
+
+              <!--// xs only //-->
+              <ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+                <li id="changeMode"><a href="#"><i class="fa fa-paint-brush fa-2x"></i></a></i></li>
+                <li id="trash"><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></li>
+                <li id="play" class="active"><a href="#"><i class="fa fa-play fa-2x"></i></a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-left hidden-lg hidden-xs">
+                <li id="changeMode"><a href="#"><i class="fa fa-paint-brush fa-2x"></i></a></i></li>
+              </ul>
+              <!--// lg only //-->
+              <ul class="nav navbar-nav navbar-right hidden-xs">
+                <li id="trash"><a href="#"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></li>
+                <li id="play" class="active"><a href="#"><i class="fa fa-play fa-2x"></i></a></li>
+              </ul>
+            </div>
+
           </nav>
 
           <textarea id="editor"></textarea>
@@ -42,15 +58,37 @@
         </div>
 
       </div>
-      <div class="col-lg-8 height">
+      <div id="result" class="col-md-12 col-lg-8 height notDisplayed">
 
         <div id="output" class="output">
+
+          <nav class="navbar navbar-inverse navbar-fixed-bottom hidden-lg">
+            <div class="container-fluid">
+
+              <!--// xs only //-->
+              <ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+                <li id="changeMode"><a href="#"><i class="fa fa-code fa-2x"></i></a></i></li>
+                <li id="play" class="active"><a href="#"><i class="fa fa-play fa-2x"></i></a></li>
+              </ul>
+
+              <!--// hidden xs //-->
+              <ul class="nav navbar-nav navbar-left hidden-xs">
+                <li id="changeMode"><a href="#"><i class="fa fa-code fa-2x"></i></a></i></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right hidden-xs">
+                <li id="play" class="active"><a href="#"><i class="fa fa-play fa-2x"></i></a></li>
+              </ul>
+            </div>
+
+          </nav>
 
         </div>
 
       </div>
 
     </div>
+
+
 
     <!--// javascript files //-->
     <!--// jQuery //-->
