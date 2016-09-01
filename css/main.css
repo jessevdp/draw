@@ -1,0 +1,70 @@
+body, html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.container {
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+.height {
+  height: inherit;
+  margin: 0px;
+  padding: 0px;
+}
+
+.menu {
+  /* Setting the icon's position to the top right corner */
+  position: absolute;
+  top: 2em;
+  right: 2em;
+
+  color: #2c3e50;
+
+  /* setting the cursor to a pointer when it's over the menu button. */
+  cursor: pointer;
+
+  /* Making sure the icon is 'on top' of all other elemets */
+  z-index: 99;
+}
+
+.code {
+  background-color: #2c3e50;
+  height: 100%;
+    overflow: visible;
+}
+
+
+.navbar {
+  background-color: #202c38;
+  border: none;
+  border-radius: 0px;
+  position: absolute;
+  bottom: 0px;
+  display: block;
+}
+.nav{
+  padding-right: 15px;
+}
+
+.editor {
+
+}
+
+
+
+.output {
+  background-color: #FFFAED;
+  height: 100%;
+}
+
+/* =================
+    RESPONSIVE CSS
+   =================*/
+  @media screen and (max-width: 768px) {
+    .menu {
+      top: 1em;
+      right: 1em;
+    }
+  }
