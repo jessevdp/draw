@@ -1,4 +1,4 @@
-// Empty app obj, Used to attach functions to.
+// Empty app obj, Used to attach functions and store settings.
 var app = {};
 
 // Empty settings object stored on the app object, used to store settings.
