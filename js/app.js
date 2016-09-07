@@ -113,7 +113,19 @@ app.registerEvents = function() {
     $('#result').toggleClass('notDisplayed');
   });
 
-  menuToggle(300);
+  /*Menu-toggle*/
+  $(document).on('click','.menu', function(e) {
+      console.log('menu toggle')
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+      $(".menu").toggleClass("menucolor");
+
+      $('.menu-button').toggle()
+      $('.close-button').toggle()
+
+  });
+  // Hiding the close button at default.
+  $('.close-button').hide();
 }
 
 /**
@@ -147,26 +159,5 @@ function dog() {
 }
 
 function menuToggle(speed) {
-  /*Menu-toggle*/
-  $(document).on('click','.menu-button', function(e) {
-      console.log('menu toggle')
-      e.preventDefault();
-      $("#wrapper").toggleClass("active");
 
-      $('.menu-button').fadeOut(speed, function () {
-        $('.close-button').show();
-      })
-  });
-  // Duplicate from the listener above, only swapped around the buttons (close and menu)
-  $(document).on('click','.close-button', function(e) {
-      console.log('menu toggle')
-      e.preventDefault();
-      $("#wrapper").toggleClass("active");
-
-      $('.close-button').fadeOut(speed, function () {
-        $('.menu-button').show();
-      })
-  });
-  // Hiding the close button at default.
-  $('.close-button').hide();
 }

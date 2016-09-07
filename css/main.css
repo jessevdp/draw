@@ -10,24 +10,31 @@ body, html {
   height: inherit;
   margin: 0px;
   padding: 0px;
+  position: relative;
 }
 
 .menu {
   /* Setting the icon's position to the top right corner */
   position: absolute;
-  top: 2em;
-  right: 2em;
+  top: 0;
+  right: 0;
+  padding: 2em;
 
   color: #202c38;
 
-  /* setting the cursor to a pointer when it's over the menu button. */
-  cursor: pointer;
+
 
   /* Making sure the icon is 'on top' of all other elemets */
   z-index: 9999;
 }
-.menu .close-button{
+.menucolor {
+  background-color: #202c38;
   color: #2c3e50;
+  padding: 1em;
+}
+.menu > *{
+  /* setting the cursor to a pointer when it's over the menu button. */
+  cursor: pointer;
 }
 
 .code {
@@ -167,9 +174,16 @@ body, html {
     .menu {
       top: 1em;
       right: 1em;
+      padding: 0px;
     }
     .sidebar-nav {
       width: 100%;
+    }
+    .height {
+      position: static;
+    }
+    .close-button {
+      color: #2c3e50;
     }
   }
   @media screen and (max-width: 1200px) {
