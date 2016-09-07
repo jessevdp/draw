@@ -106,7 +106,9 @@ body, html {
     width: 0px;
     transition: all 0.4s ease 0s;
   }
+
 }
+
 
 /* Sidebar Styles */
 
@@ -165,6 +167,9 @@ body, html {
     .menu {
       top: 1em;
       right: 1em;
+    }
+    .sidebar-nav {
+      width: 100%;
     }
   }
   @media screen and (max-width: 1200px) {
