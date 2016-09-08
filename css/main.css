@@ -45,14 +45,14 @@ body, html {
     SIDEBAR CSS
    =================*/
 #wrapper {
-  padding-top: 58px;
+  padding-top: 59px;
   padding-left: 250px;
   transition: all 0.4s ease 0s;
 }
 
 #sidebar-wrapper {
   margin-left: -250px;
-  top: 51px;
+  top: 59px;
   left: 250px;
   width: 250px;
   background: #202c38;
