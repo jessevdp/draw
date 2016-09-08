@@ -13,40 +13,20 @@ body, html {
   position: relative;
 }
 
-.menu {
-  /* Setting the icon's position to the top right corner */
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 2em;
-
-  color: #202c38;
-
-
-
-  /* Making sure the icon is 'on top' of all other elemets */
-  z-index: 9999;
-}
-.menucolor {
-  background-color: #202c38;
-  color: #2c3e50;
-  padding: 1em;
-}
-.menu > *{
-  /* setting the cursor to a pointer when it's over the menu button. */
-  cursor: pointer;
-}
-
-.code {
-  /* Make the div have the height of the entire page */
-  height: 100%;
-}
-
 .navbar {
   background-color: #202c38;
   border: none;
   border-radius: 0px;
   position: absolute;
+}
+.navbar-brand {
+  height: 59px;
+  padding: 19px 19px;
+}
+
+.code {
+  /* Make the div have the height of the entire page */
+  height: 100%;
 }
 
 .output {
@@ -56,21 +36,24 @@ body, html {
   height: 100%;
 }
 
-#sidebar-wrapper nav {
-  padding-top: 4.5em;
-}
 
 
 
+
+
+/* =================
+    SIDEBAR CSS
+   =================*/
 #wrapper {
-  padding-right: 250px;
+  padding-top: 58px;
+  padding-left: 250px;
   transition: all 0.4s ease 0s;
 }
 
 #sidebar-wrapper {
-  margin-right: -250px;
-  top: 0px;
-  right: 250px;
+  margin-left: -250px;
+  top: 51px;
+  left: 250px;
   width: 250px;
   background: #202c38;
   position: fixed;
@@ -81,44 +64,38 @@ body, html {
 }
 
 #wrapper.active {
-  padding-right: 0;
+  padding-left: 0;
 }
 
 #wrapper.active #sidebar-wrapper {
-  right: 0;
+  left: 0;
 }
 
 
-@media (max-width:767px) {
-  #sidebar-wrapper nav {
-    padding-top: 3.5em;
-  }
+@media (max-width:560px) {
 
   #wrapper {
-    padding-right: 100%;
+    padding-left: 0px;
   }
 
   #sidebar-wrapper {
-    right: 250px;
-    width: 100%;
+    left: 250px;
   }
 
   #wrapper.active {
     position: relative;
-    right: 0px;
+    left: 0px;
   }
 
   #wrapper.active #sidebar-wrapper {
-    right: 0px;
-    width: 0px;
+    left: 0px;
+    width: 250px;
     transition: all 0.4s ease 0s;
   }
 
 }
 
-
 /* Sidebar Styles */
-
 .sidebar-nav {
     position: absolute;
     top: 0;
@@ -154,7 +131,6 @@ body, html {
     height: 65px;
     font-size: 18px;
     line-height: 60px;
-    color: #999999;
 }
 
 .sidebar-nav > .sidebar-brand a {
@@ -167,23 +143,15 @@ body, html {
 }
 
 
+
+
+
 /* =================
     RESPONSIVE CSS
    =================*/
   @media screen and (max-width: 768px) {
-    .menu {
-      top: 1em;
-      right: 1em;
-      padding: 0px;
-    }
-    .sidebar-nav {
-      width: 100%;
-    }
     .height {
       position: static;
-    }
-    .close-button {
-      color: #2c3e50;
     }
   }
   @media screen and (max-width: 1200px) {
@@ -192,12 +160,15 @@ body, html {
     }
   }
 
+
+
+
   /* =================
       stops the navbar from collapsing
      =================*/
   @media (max-width: 768px) {
       .navbar {
-          border-radius: 4px;
+          border-radius: 0px;
           min-width: 400px;
       }
 
