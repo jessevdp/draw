@@ -19,9 +19,9 @@ body, html {
   border-radius: 0px;
   position: absolute;
 }
-.navbar-brand {
-  height: 59px;
-  padding: 19px 19px;
+
+.menu {
+  font-size: 1.5em;
 }
 
 .code {
@@ -45,14 +45,14 @@ body, html {
     SIDEBAR CSS
    =================*/
 #wrapper {
-  padding-top: 59px;
+  padding-top: 50px;
   padding-left: 250px;
   transition: all 0.4s ease 0s;
 }
 
 #sidebar-wrapper {
   margin-left: -250px;
-  top: 59px;
+  top: 50px;
   left: 250px;
   width: 250px;
   background: #202c38;
