@@ -169,7 +169,7 @@ body, html {
   @media (max-width: 768px) {
       .navbar {
           border-radius: 0px;
-          min-width: 400px;
+          min-width: 100%;
       }
 
       .nav-justified > li {
