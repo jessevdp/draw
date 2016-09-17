@@ -98,6 +98,8 @@ app.registerEvents = function() {
 
     // updating the canavas (normally the user would do this in their code)
     two.update();
+    // Starting any animations (normally the user would do this in their code)
+    two.play();
   });
 
   // Empties the CodeMirror on click
