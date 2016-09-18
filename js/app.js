@@ -4,7 +4,7 @@ var app = {};
 // Empty settings object stored on the app object, used to store settings.
 app.settings = {};
 // The settings
-app.settings.updateInterval = 1500;
+app.settings.updateInterval = 500;
 app.settings.textAreaId = 'editor';
 app.settings.twoId = 'output'
 
@@ -45,6 +45,17 @@ app.creatTwo =  function(twoId) {
   two = new Two({width: $('#'+app.settings.twoId).width(), height: $('#'+app.settings.twoId).height()}).appendTo(elem);
 }
 
+app.evaluate = function(code) {
+  // Clearing the two.js canvas.
+  two.clear();
+
+  // Running the passed-in js code.
+  eval(code);
+
+  // updating the canavas (normally the user would do this in their code)
+  two.update();
+}
+
 /**
  * Updates the size of the two.js created svg if needed.
  * Updates ever app.settings.updateInterval miliseconds.
@@ -64,17 +75,30 @@ app.updateTwo = function() {
     newWidth = $('#'+app.settings.twoId).width();
     newHeight = $('#'+app.settings.twoId).height();
 
-    //if either the height or width changes the size is adjusted
+    // if either the height or width changes the size is adjusted
     if (oldWidth === newWidth && oldHeight === newHeight ) {
-      // nothing needs to happen
-    } else {
-      //Setting size.
+      // nothing needs to happen since everyting is the same.
+
+      // The size was not updated;
+      return false;
+    }
+    else {
+      // Setting size.
       two.renderer.setSize(newWidth, newHeight);
       //Setting the variables (this needs to be done manually)
       two.height = newHeight;
       two.width = newWidth;
-      //Logging (for dev purposes)
+
+      // Update so the drawing is displayed using the new height and width.
+      // example:
+      // When using (two.width / 2) & (two.height / 2) to center the display, this is now updated.
+      app.evaluate(app.lastEvaluatedCode);
+
+      // Logging (for dev purposes)
       console.log('updated size');
+
+      // The size was updated;
+      return true;
     }
   }, app.settings.updateInterval);
 
@@ -87,19 +111,17 @@ app.updateTwo = function() {
  */
 app.registerEvents = function() {
 
-  // Runes value of CodeMirror on click.
+  // Runs value of CodeMirror on click.
   $(document).on('click', '#play',  function() {
-    // Clearing the two.js canvas.
-    two.clear();
     // Getting the value of CodeMirror.
     var code = app.editor.getValue();
-    // Running the passed-in js code.
-    eval(code);
 
-    // updating the canavas (normally the user would do this in their code)
-    two.update();
-    // Starting any animations (normally the user would do this in their code)
-    two.play();
+    // Storing the code in an global accesible variable so we can access it when needed.
+    app.lastEvaluatedCode = code;
+
+    // Running the code using our evaluate function.
+    app.evaluate(code);
+
   });
 
   // Empties the CodeMirror on click
@@ -117,7 +139,6 @@ app.registerEvents = function() {
 
   /*Menu-toggle*/
   $(document).on('click','.menu', function(e) {
-      console.log('menu toggle')
       e.preventDefault();
       $("#wrapper").toggleClass("active");
 
