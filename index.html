@@ -89,28 +89,59 @@
         </ul>
       </div><!--// #sidebar-wrapper //-->
 
-      <div class="row height ">
+      <div class="row height">
+
+        <!--// This is displayed when the code editor is hidden //-->
+        <div id="hidden-code" class="col-lg-1 height notDisplayed hideOnLg">
+
+          <!--// Fixed to top navbar //-->
+          <nav class="navbar navbar-nav navbar-inverse">
+
+            <ul class="nav navbar-nav nav-stacked">
+              <li id="play" class="active"><a ><i class="fa fa-play fa-2x"></i></a></li>
+            </ul>
+
+          </nav> <!--// /top nav section //-->
+
+          <!--// Fixed to bottom navbar //-->
+          <nav class="navbar navbar-nav navbar-inverse navbar-fixed-bottom">
+
+            <ul class="nav navbar-nav nav-stacked">
+
+              <li id="toggle-code"><a> <i class="fa fa-arrow-right fa-2x"></i> </a></li>
+            </ul>
+
+          </nav> <!--// /Bottom nav section //-->
+
+        </div> <!--// /Hidden code //-->
 
         <div id="code" class="col-md-12 col-lg-4 height">
 
+          <!--// mainly displayed navbar //-->
+          <nav class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container-fluid">
+
+              <!--// Hidden lg //-->
+              <ul class="nav navbar-nav navbar-left hidden-lg">
+                <li id="changeMode"><a ><i class="fa fa-paint-brush fa-2x"></i></a></i></li>
+              </ul>
+
+              <ul class="nav navbar-nav navbar-right">
+                <li id="trash"><a ><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></li>
+                <li id="play" class="active"><a ><i class="fa fa-play fa-2x"></i></a></li>
+              </ul>
+
+              <!--// Only lg, hide code panel //-->
+              <ul class="nav navbar-nav navbar-left hidden-xs hidden-sm hidden-md">
+
+                <li id="toggle-code"><a> <i class="fa fa-arrow-left fa-2x"></i> </a></li>
+
+              </ul>
+
+            </div>
+          </nav>
+
           <div class="code">
-
-            <!--// mainly displayed navbar //-->
-            <nav class="navbar navbar-inverse navbar-fixed-bottom">
-              <div class="container-fluid">
-
-                <!--// Hidden lg //-->
-                <ul class="nav navbar-nav navbar-left hidden-lg">
-                  <li id="changeMode"><a ><i class="fa fa-paint-brush fa-2x"></i></a></i></li>
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                  <li id="trash"><a ><i class="fa fa-trash fa-2x" aria-hidden="true"></i></a></li>
-                  <li id="play" class="active"><a ><i class="fa fa-play fa-2x"></i></a></li>
-                </ul>
-
-              </div>
-            </nav>
 
             <!--// textarea used to create CodeMirror //-->
             <textarea id="editor"></textarea>

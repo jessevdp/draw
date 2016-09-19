@@ -130,12 +130,26 @@ app.registerEvents = function() {
     app.editor.clearHistory();
   });
 
-  // toggles the notDisplayed class on click.
+  // Toggles the notDisplayed class on click.
   // (Switch from code to output and back on smaller displays)
   $(document).on('click', '#changeMode',  function() {
     $('#code').toggleClass('notDisplayed');
     $('#result').toggleClass('notDisplayed');
   });
+
+  // Hides the code bit on click.
+  // (On lg screens only)
+  $(document).on('click', '#toggle-code', function() {
+    // resizing the result bit
+    $('#result').toggleClass('col-lg-8');
+    $('#result').toggleClass('col-lg-11');
+
+    // Hiding/showing the code bit.
+    $('#code').toggleClass('hideOnLg');
+
+    // Hiding/showing the alternative nav (hidden by default)
+    $('#hidden-code').toggleClass('hideOnLg');
+  })
 
   /*Menu-toggle*/
   $(document).on('click','.menu', function(e) {
