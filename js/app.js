@@ -142,7 +142,7 @@ app.registerEvents = function() {
   $(document).on('click', '#toggle-code', function() {
     // resizing the result bit
     $('#result').toggleClass('col-lg-8');
-    $('#result').toggleClass('col-lg-11');
+    $('#result').toggleClass('outputLarge');
 
     // Hiding/showing the code bit.
     $('#code').toggleClass('hideOnLg');
