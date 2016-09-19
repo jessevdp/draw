@@ -29,11 +29,36 @@ body, html {
   height: 100%;
 }
 
+#hidden-code {
+  background-color: #202c38;
+}
+#hidden-code .navbar {
+  text-align: center;
+  width: 100%;
+}
+#hidden-code .nav{
+  float: none;
+}
+#hidden-code .nav>li {
+  float: none;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
+.table {
+  width: 100%;
+  display: table;
+  max-height: 100%;
+}
+
 .output {
   /* A nice beige background */
   background-color: #FFFAED;
   /* Make the div have the height of the entire page */
   height: 100%;
+  max-height: 100%;
 }
 
 
@@ -156,7 +181,12 @@ body, html {
   }
   @media screen and (max-width: 1200px) {
     .notDisplayed {
-      display: none;
+      display: none !important;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    .hideOnLg {
+      display: none !important;
     }
   }
 
