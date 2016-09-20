@@ -122,12 +122,17 @@ app.registerEvents = function() {
     // Running the code using our evaluate function.
     app.evaluate(code);
 
+    // Logging the interaction
+    console.log('play');
   });
 
   // Empties the CodeMirror on click
   $(document).on('click', '#trash',  function() {
     app.editor.setValue("");
     app.editor.clearHistory();
+
+    // Logging the interaction
+    console.log('trash');
   });
 
   // Toggles the notDisplayed class on click.
@@ -135,6 +140,9 @@ app.registerEvents = function() {
   $(document).on('click', '#changeMode',  function() {
     $('#code').toggleClass('notDisplayed');
     $('#result').toggleClass('notDisplayed');
+
+    // Logging the interaction
+    console.log('changeMode');
   });
 
   // Hides the code bit on click.
@@ -149,6 +157,9 @@ app.registerEvents = function() {
 
     // Hiding/showing the alternative nav (hidden by default)
     $('#hidden-code').toggleClass('hideOnLg');
+
+    // Logging the interaction
+    console.log('toggle-code');
   })
 
   /*Menu-toggle*/
@@ -159,6 +170,8 @@ app.registerEvents = function() {
       $('.menu-button').toggle()
       $('.close-button').toggle()
 
+      // Logging the interaction
+      console.log('Menu-toggle');
   });
   // Hiding the close button at default.
   $('.close-button').hide();
