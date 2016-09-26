@@ -19,9 +19,17 @@ body, html {
   border-radius: 0px;
   position: absolute;
 }
-
+#top-navbar {
+  max-height: 51px;
+}
 .menu {
-  font-size: 1.5em;
+  font-size: 32px;
+  padding-top: 9px!important;
+  padding-bottom: 9px!important;
+}
+#menu {
+  margin-left: -15px;
+  margin-right: 10px;
 }
 
 .code {
